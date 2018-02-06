@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+
+
 class App extends Component {
+
   render() {
+    const photos = ["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg"];
+    const random = Math.floor(Math.random() * photos.length);
+    const bannerStyle = {backgroundImage: 'url(' + photos[random] + ')'}
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="banner" style={bannerStyle}>
+        <div className="overlay"></div>
       </div>
     );
   }
