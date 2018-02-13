@@ -11,7 +11,13 @@ class App extends Component {
 
     return (
       <div className="banner" style={bannerStyle}>
-        <div className="overlay"></div>
+        <div className="banner-overlay">
+          <div className="banner-text">
+            <h1>TIP JAR</h1>
+            <p>A globetrotting guide to gratuity</p>
+            <button>Choose a Location</button>
+          </div>
+        </div>
       </div>
     );
   }
