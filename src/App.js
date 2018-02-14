@@ -6,20 +6,48 @@ const random = Math.floor(Math.random() * photos.length);
 const bannerStyle = {backgroundImage: 'url(img/' + photos[random] + ')'}
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this._locationList = this._locationList.bind(this);
+    this.state = {
+      display: "splash"
+    };
+  }
+  _locationList = () => {
+    this.setState({
+      display: "list"
+    });
+  }
 
   render() {
+    const display = this.state.display
 
-    return (
-      <div className="banner" style={bannerStyle}>
-        <div className="banner-overlay">
-          <div className="banner-text">
-            <h1>TIP JAR</h1>
-            <p>A globetrotting guide to gratuity</p>
-            <button>Choose a Location</button>
+    switch (display) {
+      case "splash":
+    // if (display === "splash") {
+        return (
+          <div className="banner" style={bannerStyle}>
+            <div className="banner-overlay">
+              <div className="banner-text">
+                <h1>TIP JAR</h1>
+                <p>A globetrotting guide to gratuity</p>
+                <button onClick={this._locationList}>Choose a Location</button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    );
+        );
+        // break;
+      case "list":
+    // } else if (display === "list") {
+        return (
+          <h1>hello</h1>
+        );
+        // break;
+      default:
+        return (
+          <h1>default</h1>
+        );
+    }
   }
 }
 

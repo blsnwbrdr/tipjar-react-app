@@ -5,6 +5,8 @@ $patrick: 'Patrick Hand', sans-serif
 $nothing: 'Nothing You Could Do', sans-serif
 $hind: 'Hind', sans-serif
 $orange-1: #CC9F74
+=transition($transition-time)
+    transition: all $transition-time ease-out
 
 h1,h2,h3,h4,h5,p
   margin-top: 0
@@ -54,3 +56,20 @@ h4,h5,p
     font: 16px $hind
     color: white
     font-weight: 600
+    margin-top: 30px
+    +transition(0.3s)
+    &:hover
+      cursor: pointer
+      padding: 5px 35px
+      background-color: $orange-1
+      +transition(0.3s)
+
+@media(min-width:768px)
+  .banner
+    .banner-text
+      transform: translate(-50%,-75%)
+    h1
+      font-size: 120px
+    p
+      font-size: 32px
+      width: 550px
