@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
 import './App.css';
 import Splash from './Splash';
-import List from './List';
+import Listings from './Listings';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.displayList = this.displayList.bind(this);
+    // this.displayListings = this.displayListings.bind(this);
     this.state = {
-      display: "splash"
+      display: 'Splash'
     };
   }
-  displayList = () => {
+
+  displayListings = () => {
     this.setState({
-      display: "list"
+      display: 'Listings'
     });
   }
 
   render() {
-    const display = this.state.display
+    const display = this.state.display;
 
     switch (display) {
-      case "splash":
+      case 'Splash':
         return (
-          <Splash displayList={this.displayList} />
+          <Splash displayListings={this.displayListings} />
         );
-      case "list":
+      case 'Listings':
         return (
-          <List />
+          <Listings />
         );
       default:
         return (
-          <Splash displayList={this.displayList} />
+          <Splash displayListings={this.displayListings} />
         );
     }
   }
