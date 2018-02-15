@@ -11,12 +11,6 @@ class ListingsBody extends Component {
     };
   }
 
-  // displayCountryList = (e) => {
-  //   this.setState({
-  //     display: 'CountryList'
-  //   });
-  //   console.log(e);
-  // }
   displayCountryList(e) {
     this.setState({
       display: 'CountryList'

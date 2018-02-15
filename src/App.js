@@ -6,13 +6,13 @@ import Listings from './Listings';
 class App extends Component {
   constructor(props) {
     super(props);
-    // this.displayListings = this.displayListings.bind(this);
+    this.displayListings = this.displayListings.bind(this);
     this.state = {
       display: 'Splash'
     };
   }
 
-  displayListings = () => {
+  displayListings() {
     this.setState({
       display: 'Listings'
     });

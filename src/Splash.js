@@ -13,7 +13,7 @@ class Splash extends Component {
           <div className='header'>
             <h1>TIP JAR</h1>
             <p>A globetrotting guide to gratuity</p>
-            <button onClick={this.props.displayListings}>Choose a Location</button>
+            <button onClick={ () => this.props.displayListings() }>Choose a Location</button>
           </div>
         </div>
       </div>

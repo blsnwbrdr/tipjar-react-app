@@ -85,23 +85,25 @@ h4,h5,p
       margin: 0 auto
       border-left: 2px solid $grey-1
       border-right: 2px solid $grey-1
-    button
-      background-color: transparent
-      border: 2px solid $grey-1
-      border-radius: 20px
-      padding: 5px 25px
-      font-family: $hind
-      font-size: 16px
-      color: $grey-1
-      font-weight: 600
-      margin-top: 30px
+  img
+    margin-top: 30px
+  button
+    background-color: transparent
+    border: 2px solid $grey-1
+    border-radius: 20px
+    padding: 5px 25px
+    font-family: $hind
+    font-size: 16px
+    color: $grey-1
+    font-weight: 600
+    margin-top: 30px
+    +transition(0.3s)
+    &:hover
+      cursor: pointer
+      padding: 5px 35px
+      color: white
+      background-color: $grey-1
       +transition(0.3s)
-      &:hover
-        cursor: pointer
-        padding: 5px 35px
-        color: white
-        background-color: $grey-1
-        +transition(0.3s)
 
 
 @media(min-width:768px)
