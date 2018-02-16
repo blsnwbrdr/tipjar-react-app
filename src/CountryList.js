@@ -15,6 +15,21 @@ function compare(a,b) {
 countryTipData.sort(compare);
 
 class CountryList extends Component {
+  // constructor(props) {
+  //   super(props);
+    // this.displayCountryList = this.displayCountryList.bind(this);
+    // this.displayCountryInfo = this.displayCountryInfo.bind(this);
+    // this.state = {
+    //   display: 'CountryList'
+    // };
+  // }
+
+  // displayCountryInfo(e) {
+  //   this.setState({
+  //     display: 'CountryInfo'
+  //   });
+  //   console.log(e);
+  // }
 
   render() {
     return (
@@ -23,10 +38,10 @@ class CountryList extends Component {
           <a href='https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&amp;mt=8' target='_blank' rel="noopener noreferrer"><img src='img/appStore.svg' alt='apple app store icon' /></a>
         </div>
         <div className="list">
-          {countryTipData.map(function(data, key) {
+          {countryTipData.map((data, key) => {
             return (
               <li key={key}>
-                <button>{data.country}</button>
+                <button onClick={ () => this.props.displayCountryInfo(data.country) }>{data.country}</button>
               </li>
             )
           })}

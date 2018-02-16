@@ -4,7 +4,14 @@ class CountryInfo extends Component {
 
   render() {
     return (
-      <button onClick={ () => this.props.displayCountryList('parameter') }>Choose a Location</button>
+      <div className="body">
+        <div className="button">
+          <button onClick={ () => this.props.displayCountryList() }>Choose a Location</button>
+        </div>
+        <div>
+          <p>{this.props.chosenCountry}</p>
+        </div>
+      </div>
     )
   }
 }
