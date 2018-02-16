@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Patrick+Hand|Nothing+You+Could+Do|Hind:600");
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand|Nothing+You+Could+Do|Hind:400,600");
 h1, h2, h3, h4, h5, p {
   margin-top: 0;
 }
@@ -35,21 +35,21 @@ h4, h5, p {
   background: rgba(62, 41, 22, 0.75);
 }
 
-.splash .header {
+.splash .overlay .header {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
 }
 
-.splash .header h1 {
+.splash .overlay .header h1 {
   font-family: "Patrick Hand", sans-serif;
   font-size: 60px;
   color: #CC9F74;
   letter-spacing: 2px;
 }
 
-.splash .header p {
+.splash .overlay .header p {
   font-family: "Nothing You Could Do", sans-serif;
   font-size: 16px;
   color: white;
@@ -59,7 +59,7 @@ h4, h5, p {
   border-right: 2px solid white;
 }
 
-.splash .header button {
+.splash .overlay .header button {
   background-color: transparent;
   border: 2px solid white;
   border-radius: 20px;
@@ -72,7 +72,7 @@ h4, h5, p {
   transition: all 0.3s ease-out;
 }
 
-.splash .header button:hover {
+.splash .overlay .header button:hover {
   cursor: pointer;
   padding: 5px 35px;
   background-color: #CC9F74;
@@ -80,6 +80,7 @@ h4, h5, p {
 }
 
 .listings {
+  margin-bottom: 75px;
   text-align: center;
 }
 
@@ -100,11 +101,15 @@ h4, h5, p {
   border-right: 2px solid #494F56;
 }
 
-.listings img {
+.listings .body {
   margin-top: 30px;
 }
 
-.listings button {
+.listings .body .button img {
+  width: 100px;
+}
+
+.listings .body .button button {
   background-color: transparent;
   border: 2px solid #494F56;
   border-radius: 20px;
@@ -117,12 +122,23 @@ h4, h5, p {
   transition: all 0.3s ease-out;
 }
 
-.listings button:hover {
+.listings .body .button button:hover {
   cursor: pointer;
   padding: 5px 35px;
   color: white;
   background-color: #494F56;
   transition: all 0.3s ease-out;
+}
+
+.listings .body .list {
+  margin-top: 50px;
+  list-style: none;
+}
+
+.listings .body .list button {
+  padding: 0 20px;
+  font-family: "Hind", sans-serif;
+  font-size: 18px;
 }
 
 @media (min-width: 768px) {
@@ -136,10 +152,10 @@ h4, h5, p {
     font-size: 32px;
     width: 550px;
   }
-  .list .header h1 {
+  .listings .header h1 {
     font-size: 120px;
   }
-  .list .header p {
+  .listings .header p {
     font-size: 32px;
     width: 550px;
   }

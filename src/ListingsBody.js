@@ -7,7 +7,7 @@ class ListingsBody extends Component {
     super(props);
     this.displayCountryList = this.displayCountryList.bind(this);
     this.state = {
-      display: 'CountryInfo'
+      display: 'CountryList'
     };
   }
 
