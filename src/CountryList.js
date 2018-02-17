@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // JSON DATA
 import countryTipData from './data/countryTipData';
-// import currencyData from './data/currencyData';
 
 // SORT COUNTRY LIST
 function compare(a,b) {
@@ -15,21 +14,6 @@ function compare(a,b) {
 countryTipData.sort(compare);
 
 class CountryList extends Component {
-  // constructor(props) {
-  //   super(props);
-    // this.displayCountryList = this.displayCountryList.bind(this);
-    // this.displayCountryInfo = this.displayCountryInfo.bind(this);
-    // this.state = {
-    //   display: 'CountryList'
-    // };
-  // }
-
-  // displayCountryInfo(e) {
-  //   this.setState({
-  //     display: 'CountryInfo'
-  //   });
-  //   console.log(e);
-  // }
 
   render() {
     return (

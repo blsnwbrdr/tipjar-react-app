@@ -141,6 +141,10 @@ h4, h5, p {
   font-size: 18px;
 }
 
+.listings .body .country {
+  margin-top: 50px;
+}
+
 @media (min-width: 768px) {
   .splash .header {
     transform: translate(-50%, -75%);

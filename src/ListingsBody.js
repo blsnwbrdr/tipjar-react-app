@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import CountryList from './CountryList';
 import CountryInfo from './CountryInfo';
 
+// JSON DATA
+import countryTipData from './data/countryTipData';
+import currencyData from './data/currencyData';
+
 class ListingsBody extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +23,20 @@ class ListingsBody extends Component {
   }
 
   displayCountryInfo(country) {
-    this.setState({
-      display: 'CountryInfo',
-      chosenCountry: country
-    });
     console.log(country);
+    for ( var x = 0; x < countryTipData.length; x++) {
+      if (country === countryTipData[x].country) {
+        for ( var i = 0; i < currencyData.length; i++) {
+          if (countryTipData[x].currency === currencyData[i].currency) {
+            this.setState({
+             display: 'CountryInfo',
+             countryTipData: countryTipData[x],
+             currencyData: Math.round(currencyData[i].conversion * 100) / 100,
+            })
+          }
+        }
+      }
+    }
   }
 
   render() {
@@ -38,12 +51,13 @@ class ListingsBody extends Component {
         return (
           <CountryInfo
             displayCountryList={this.displayCountryList}
-            chosenCountry={this.state.chosenCountry}
+            countryTipData={this.state.countryTipData}
+            currencyData={this.state.currencyData}
             />
         )
       default:
         return (
-          <CountryList />
+          <CountryList displayCountryInfo={this.displayCountryInfo} />
         )
     }
   }
