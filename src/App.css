@@ -251,6 +251,7 @@ h3, p, button, li {
     width: 550px;
   }
   .listings .header {
+    position: relative;
     height: 225px;
   }
   .listings .header h1 {
@@ -261,7 +262,7 @@ h3, p, button, li {
     width: 550px;
   }
   .listings .body {
-    margin-top: 250px;
+    margin-top: 50px;
   }
   .listings .body .list ul {
     column-count: 2;
@@ -297,4 +298,27 @@ h3, p, button, li {
 
 .shadow {
   box-shadow: 0px 0px 10px 0px #cbcfd3;
+}
+
+@media (min-width: 768px) {
+  .shadow {
+    box-shadow: none;
+  }
+}
+
+@media (hover: none), (hover: on-demand) {
+  .splash .overlay .header button:hover {
+    background-color: transparent;
+    padding: 5px 25px;
+  }
+  .listings .body .button button:hover {
+    background-color: transparent;
+    padding: 5px 25px;
+    color: #494F56;
+  }
+  .listings .body .list button:hover {
+    border-left-color: transparent;
+    padding-left: 20px;
+    color: #494F56;
+  }
 }
