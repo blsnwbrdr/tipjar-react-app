@@ -17,11 +17,11 @@ class CountryList extends Component {
 
   render() {
     return (
-      <div className="body">
-        <div className="button">
-          <a href='https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&amp;mt=8' target='_blank' rel="noopener noreferrer"><img src='img/appStore.svg' alt='apple app store icon' /></a>
+      <div className='body fadeIn'>
+        <div className='button'>
+          <a href='https://itunes.apple.com/us/app/tip-jar-guide-to-gratuity/id1321633520?ls=1&amp;mt=8' target='_blank' rel='noopener noreferrer'><img src='img/appStore.svg' alt='apple app store icon' /></a>
         </div>
-        <div className="list">
+        <div className='list'>
           <ul>
             {countryTipData.map((data, key) => {
               return (

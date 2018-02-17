@@ -8,7 +8,7 @@ class Splash extends Component {
 
   render() {
     return (
-      <div className='splash' style={splashBackground}>
+      <div className='splash fadeIn' style={splashBackground}>
         <div className='overlay'>
           <div className='header'>
             <h1>TIP JAR</h1>
