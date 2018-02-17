@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand|Nothing+You+Could+Do|Hind:400,600");
+h1, h2, h3, h4, h5, p, button, li {
+  color: #494F56;
+}
+
 h1, h2, h3, h4, h5, p {
   margin-top: 0;
 }
@@ -13,6 +17,19 @@ h2, h3 {
 
 h4, h5, p {
   margin-bottom: 10px;
+}
+
+h1 {
+  font-family: "Patrick Hand", sans-serif;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: "Patrick Hand", sans-serif;
+}
+
+h3, p, button, li {
+  font-family: "Hind", sans-serif;
 }
 
 #app {
@@ -43,10 +60,8 @@ h4, h5, p {
 }
 
 .splash .overlay .header h1 {
-  font-family: "Patrick Hand", sans-serif;
   font-size: 60px;
   color: #CC9F74;
-  letter-spacing: 2px;
 }
 
 .splash .overlay .header p {
@@ -64,7 +79,6 @@ h4, h5, p {
   border: 2px solid white;
   border-radius: 20px;
   padding: 5px 25px;
-  font-family: "Hind", sans-serif;
   font-size: 16px;
   color: white;
   font-weight: 600;
@@ -85,16 +99,13 @@ h4, h5, p {
 }
 
 .listings .header h1 {
-  font-family: "Patrick Hand", sans-serif;
   font-size: 60px;
   color: #B57A42;
-  letter-spacing: 2px;
 }
 
 .listings .header p {
   font-family: "Nothing You Could Do", sans-serif;
   font-size: 16px;
-  color: #494F56;
   width: 275px;
   margin: 0 auto;
   border-left: 2px solid #494F56;
@@ -102,7 +113,8 @@ h4, h5, p {
 }
 
 .listings .body {
-  margin-top: 30px;
+  width: 75%;
+  margin: 30px auto 0;
 }
 
 .listings .body .button img {
@@ -114,9 +126,7 @@ h4, h5, p {
   border: 2px solid #494F56;
   border-radius: 20px;
   padding: 5px 25px;
-  font-family: "Hind", sans-serif;
   font-size: 16px;
-  color: #494F56;
   font-weight: 600;
   margin-top: 30px;
   transition: all 0.3s ease-out;
@@ -132,27 +142,56 @@ h4, h5, p {
 
 .listings .body .list {
   margin-top: 50px;
+}
+
+.listings .body .list ul {
+  column-count: 1;
   list-style: none;
+  padding-left: 0;
 }
 
 .listings .body .list button {
+  background-color: transparent;
+  border: 2px solid transparent;
   padding: 0 20px;
-  font-family: "Hind", sans-serif;
   font-size: 18px;
+  transition: all 0.3s ease-out;
+}
+
+.listings .body .list button:hover {
+  cursor: pointer;
+  border-left-color: #B57A42;
+  padding-left: 30px;
+  color: #B57A42;
+  transition: all 0.3s ease-out;
 }
 
 .listings .body .country {
-  margin-top: 50px;
+  max-width: 500px;
+  margin: 50px auto 0;
+}
+
+.listings .body .country h2 {
+  font-size: 30px;
+  color: #B57A42;
+}
+
+.listings .body .country h3 {
+  font-size: 20px;
+}
+
+.listings .body .country p {
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
-  .splash .header {
+  .splash .overlay .header {
     transform: translate(-50%, -75%);
   }
-  .splash .header h1 {
+  .splash .overlay .header h1 {
     font-size: 120px;
   }
-  .splash .header p {
+  .splash .overlay .header p {
     font-size: 32px;
     width: 550px;
   }
@@ -162,5 +201,17 @@ h4, h5, p {
   .listings .header p {
     font-size: 32px;
     width: 550px;
+  }
+  .listings .body .list ul {
+    column-count: 2;
+  }
+  .listings .body .country h2 {
+    font-size: 54px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listings .body .list ul {
+    column-count: 3;
   }
 }

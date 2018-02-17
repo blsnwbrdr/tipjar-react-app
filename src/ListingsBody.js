@@ -23,6 +23,8 @@ class ListingsBody extends Component {
   }
 
   displayCountryInfo(country) {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     console.log(country);
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
