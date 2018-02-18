@@ -78,7 +78,7 @@ h3,p,button,li
           background-color: $orange-1
           +transition(0.3s)
 .listings
-  margin-bottom: 75px
+  padding-bottom: 75px
   text-align: center
   .header
     position: fixed
@@ -175,7 +175,13 @@ h3,p,button,li
       .disclaimer
         font-size: 12px
 
-// DESKTOP AND TABLET
+// MEDIA QUERIES
+@media(min-width:480px)
+  .listings
+    .header
+      position: relative
+    .body
+      margin-top: 25px
 @media(min-width:768px)
   .splash
     .overlay
@@ -188,7 +194,6 @@ h3,p,button,li
           width: 550px
   .listings
     .header
-      position: relative
       height: 225px
       h1
         font-size: 120px
@@ -196,14 +201,12 @@ h3,p,button,li
         font-size: 32px
         width: 550px
     .body
-      margin-top: 50px
       .list
         ul
           column-count: 2
       .country
         h2
           font-size: 54px
-
 @media(min-width:1024px)
   .listings
     .body
@@ -227,7 +230,7 @@ h3,p,button,li
 
 .shadow
   box-shadow: 0px 0px 10px 0px lighten($grey-1, 50%)
-@media(min-width:768px)
+@media(min-width:480px)
   .shadow
     box-shadow: none
 
