@@ -21,7 +21,7 @@ class CountryInfo extends Component {
           <p>{this.props.countryTipData.accommodation}</p>
           <div className='fa fa-money'></div>
           <h3 className='line-140'>Currency*:</h3>
-          <p>1 USD = {this.props.currencyData} {this.props.countryTipData.currency}</p>
+          <p>1 USD = {this.props.countryCurrencyData} {this.props.countryTipData.currency}</p>
           <div className='fa fa-language'></div>
           <h3 className='line-140'>Thank you:</h3>
           <p>{this.props.countryTipData.thankyou}</p>

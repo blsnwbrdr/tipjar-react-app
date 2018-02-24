@@ -4,7 +4,7 @@ import CountryInfo from './CountryInfo';
 
 // JSON DATA
 import countryTipData from './data/countryTipData';
-import currencyData from './data/currencyData';
+// import currencyData from './data/currencyData';
 
 class ListingsBody extends Component {
   constructor(props) {
@@ -12,8 +12,21 @@ class ListingsBody extends Component {
     this.displayCountryList = this.displayCountryList.bind(this);
     this.displayCountryInfo = this.displayCountryInfo.bind(this);
     this.state = {
-      display: 'CountryList'
+      display: 'CountryList',
+      currencyData: []
     };
+  }
+
+  componentDidMount() {
+    fetch('https://brandonscode.herokuapp.com/currency-data')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            currencyData: result
+          });
+        }
+      )
   }
 
   displayCountryList() {
@@ -25,15 +38,14 @@ class ListingsBody extends Component {
   displayCountryInfo(country) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    console.log(country);
     for ( var x = 0; x < countryTipData.length; x++) {
       if (country === countryTipData[x].country) {
-        for ( var i = 0; i < currencyData.length; i++) {
-          if (countryTipData[x].currency === currencyData[i].currency) {
+        for ( var i = 0; i < this.state.currencyData.length; i++) {
+          if (countryTipData[x].currency === this.state.currencyData[i].currency) {
             this.setState({
              display: 'CountryInfo',
              countryTipData: countryTipData[x],
-             currencyData: Math.round(currencyData[i].conversion * 100) / 100,
+             countryCurrencyData: Math.round(this.state.currencyData[i].conversion * 100) / 100,
             })
           }
         }
@@ -54,7 +66,7 @@ class ListingsBody extends Component {
           <CountryInfo
             displayCountryList={this.displayCountryList}
             countryTipData={this.state.countryTipData}
-            currencyData={this.state.currencyData}
+            countryCurrencyData={this.state.countryCurrencyData}
             />
         )
       default:
