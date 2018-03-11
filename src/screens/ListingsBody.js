@@ -3,7 +3,7 @@ import CountryList from './CountryList';
 import CountryInfo from './CountryInfo';
 
 // JSON DATA
-import countryTipData from './data/countryTipData';
+import countryTipData from './../data/countryTipData';
 // import currencyData from './data/currencyData';
 
 class ListingsBody extends Component {

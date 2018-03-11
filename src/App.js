@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
-import Splash from './Splash';
-import Listings from './Listings';
+
+// COMPONENTS
+import Splash from './screens/Splash';
+import Listings from './screens/Listings';
+
+// STYLES
+import './styles/app.css';
 
 class App extends Component {
   constructor(props) {

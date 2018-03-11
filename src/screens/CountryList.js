@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // JSON DATA
-import countryTipData from './data/countryTipData';
+import countryTipData from './../data/countryTipData';
 
 // SORT COUNTRY LIST
 function compare(a,b) {
