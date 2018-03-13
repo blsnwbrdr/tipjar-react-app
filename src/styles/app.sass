@@ -30,6 +30,12 @@ h2
   font-family: $patrick
 h3,p,button,li
   font-family: $hind
+a,a:visited
+  text-decoration: none
+  color: $grey-1
+  &:hover
+    color: $orange-2
+    text-decoration: underline
 
 // STYLES
 #app
@@ -121,6 +127,7 @@ h3,p,button,li
           +transition(0.3s)
     .list
       margin-top: 50px
+      margin-bottom: 50px
       ul
         column-count: 1
         list-style: none
@@ -173,7 +180,12 @@ h3,p,button,li
       .line-200
         width: 200px
       .disclaimer
+        margin-bottom: 50px
         font-size: 12px
+  .footer
+    p
+      margin-bottom: 5px
+      font-size: 12px
 
 // MEDIA QUERIES
 @media(min-width:480px)

@@ -27,7 +27,7 @@ class CountryInfo extends Component {
           <p>{this.props.countryTipData.thankyou}</p>
           <h3 className='line-125'>Goodbye:</h3>
           <p>{this.props.countryTipData.goodbye}</p>
-          <p className='disclaimer'>*Currency data is not live. Exchange rates are historical and periodically updated.</p>
+          <p className='disclaimer'>*Currency data is not live. Exchange rates are updated daily.</p>
         </div>
       </div>
     )

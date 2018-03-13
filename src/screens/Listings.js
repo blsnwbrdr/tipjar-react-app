@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListingsHeader from './ListingsHeader';
 import ListingsBody from './ListingsBody';
+import ListingsFooter from './ListingsFooter';
 
 class Listings extends Component {
 
@@ -9,6 +10,7 @@ class Listings extends Component {
       <div className='listings'>
         <ListingsHeader />
         <ListingsBody />
+        <ListingsFooter />
       </div>
     )
   }

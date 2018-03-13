@@ -30,6 +30,7 @@ class ListingsHeader extends Component {
   render() {
     return (
       <div className={`header fadeIn ${this.state.shadow}`}>
+        <nav className='nav'></nav>
         <h1>TIP JAR</h1>
         <p>A globetrotting guide to gratuity</p>
       </div>
