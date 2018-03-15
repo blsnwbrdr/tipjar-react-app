@@ -18,7 +18,6 @@ class App extends Component {
 
   componentDidMount() {
     fetch('https://brandonscode.herokuapp.com/currency-data')
-      console.log('Connected to currency database');
   }
 
   displayListings() {
