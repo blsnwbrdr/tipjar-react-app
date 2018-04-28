@@ -14,7 +14,7 @@ Scroll or search through the web app to find the tip etiquette of over 85 countr
 ## Built With
 
 * [React](https://reactjs.org) - A JavaScript library for building user interfaces
-* [Custom API](https://github.com/blsnwbrdr/heroku-node-api) - A custom-made API hosting currency data for Tip Jar
+* [Custom API](https://github.com/blsnwbrdr/heroku-node-api) - A custom-made API, hosting currency data for Tip Jar
 
 ## Authors
 
