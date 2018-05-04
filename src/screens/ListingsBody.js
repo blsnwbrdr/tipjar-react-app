@@ -17,7 +17,7 @@ class ListingsBody extends Component {
   }
 
   componentDidMount() {
-    fetch('https://brandonscode.herokuapp.com/currency-data')
+    fetch('https://brandonscode.herokuapp.com/tipjar/currency-data')
       .then(res => res.json())
       .then(
         (result) => {
