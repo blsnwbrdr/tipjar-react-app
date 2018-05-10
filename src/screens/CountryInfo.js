@@ -17,7 +17,7 @@ class CountryInfo extends Component {
           <h3 className='line-200'>Transportation:</h3>
           <p>{this.props.countryTipData.transportation}</p>
           <div className='fa fa-building'></div>
-          <h3 className='line-200'>Accomodation:</h3>
+          <h3 className='line-200'>Accommodation:</h3>
           <p>{this.props.countryTipData.accommodation}</p>
           <div className='fa fa-money'></div>
           <h3 className='line-140'>Currency*:</h3>
