@@ -1,7 +1,12 @@
 {
-  "name": "react-practice",
+  "name": "tipjar-react-app",
   "version": "0.1.0",
+  "description": "gratuity app built with react",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blsnwbrdr/tipjar-react-app.git"
+  },
   "homepage" : "http://brandonsco.de/portfolio/tipjar",
   "dependencies": {
     "react": "^16.0.0",
