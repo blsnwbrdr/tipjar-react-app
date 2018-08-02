@@ -5,6 +5,7 @@ import countryTipData from './../data/countryTipData';
 
 // SORT COUNTRY LIST
 function compare(a,b) {
+  // console.log(`${countryTipData.length} countries`);
   if (a.country < b.country)
     return -1;
   if (a.country > b.country)
