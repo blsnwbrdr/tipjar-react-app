@@ -247,8 +247,12 @@ a:hover, a:visited:hover {
 }
 
 .listings .body .country .disclaimer {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   font-size: 12px;
+}
+
+.listings .footer {
+  padding-top: 50px;
 }
 
 .listings .footer p {
