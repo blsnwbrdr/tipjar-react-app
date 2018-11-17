@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import CountryList from './CountryList';
 import CountryInfo from './CountryInfo';
 
-// JSON DATA
-import countryTipData from './../data/countryTipData';
-
 class ListingsBody extends Component {
   constructor(props) {
     super(props);
@@ -37,19 +34,22 @@ class ListingsBody extends Component {
   displayCountryInfo(country) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    for ( var x = 0; x < countryTipData.length; x++) {
-      if (country === countryTipData[x].country) {
-        for ( var i = 0; i < this.state.currencyData.length; i++) {
-          if (countryTipData[x].currency === this.state.currencyData[i].currency) {
-            this.setState({
-             display: 'CountryInfo',
-             countryTipData: countryTipData[x],
-             countryCurrencyData: Math.round(this.state.currencyData[i].conversion * 100) / 100,
-            })
+    fetch(`https://brandonscode.herokuapp.com/tipjar/search/country/${country}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          for ( var i = 0; i < this.state.currencyData.length; i++) {
+            if (result.currency === this.state.currencyData[i].currency) {
+              this.setState({
+               display: 'CountryInfo',
+               countryTipData: result,
+               countryCurrencyData: Math.round(this.state.currencyData[i].conversion * 100) / 100,
+              })
+            }
           }
         }
-      }
-    }
+      )
   }
 
   render() {

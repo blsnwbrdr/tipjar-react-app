@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 
-// JSON DATA
-import countryTipData from './../data/countryTipData';
-
-// SORT COUNTRY LIST
-function compare(a,b) {
-  // console.log(`${countryTipData.length} countries`);
-  if (a.country < b.country)
-    return -1;
-  if (a.country > b.country)
-    return 1;
-  return 0;
-}
-countryTipData.sort(compare);
-
 class CountryList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      countryTipData: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://brandonscode.herokuapp.com/tipjar/all')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            countryTipData: result
+          });
+        }
+      )
+  }
 
   render() {
     return (
@@ -24,7 +28,7 @@ class CountryList extends Component {
         </div>
         <div className='list'>
           <ul>
-            {countryTipData.map((data, key) => {
+            {this.state.countryTipData.map((data, key) => {
               return (
                 <li key={key}>
                   <button onClick={ () => this.props.displayCountryInfo(data.country) }>{data.country}</button>
