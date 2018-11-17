@@ -38,7 +38,6 @@ class ListingsBody extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
           for ( var i = 0; i < this.state.currencyData.length; i++) {
             if (result.currency === this.state.currencyData[i].currency) {
               this.setState({

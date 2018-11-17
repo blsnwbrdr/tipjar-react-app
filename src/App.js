@@ -16,10 +16,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('https://brandonscode.herokuapp.com/tipjar/currency-data')
-  }
-
   displayListings() {
     this.setState({
       display: 'Listings'
