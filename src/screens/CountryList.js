@@ -9,7 +9,7 @@ class CountryList extends Component {
   }
 
   componentDidMount() {
-    fetch('https://brandonscode.herokuapp.com/tipjar/all')
+    fetch('https://brandonscode.herokuapp.com/tipjar/tip-data')
       .then(res => res.json())
       .then(
         (result) => {
