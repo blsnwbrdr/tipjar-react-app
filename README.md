@@ -17,4 +17,4 @@ Scroll or search through the web app to find the tip etiquette of over 85 countr
 
 ## Authors
 
-* **Brandon Lew** - [brandonsCO.DE](http://www.brandonsco.de)
+* **Brandon Lew** - [brandonlew.com](http://www.brandonlew.com)
