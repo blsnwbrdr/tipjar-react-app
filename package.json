@@ -20,7 +20,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.2",
     "gulp-cssmin": "^0.2.0",
     "gulp-sass": "^4.1.0",
     "node-sass": "^4.14.1"
