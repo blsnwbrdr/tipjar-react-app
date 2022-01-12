@@ -5,7 +5,7 @@ import Splash from './screens/Splash';
 import Listings from './screens/Listings';
 
 // STYLES
-import './styles/app.css';
+import './styles/app.min.css';
 
 class App extends Component {
   constructor(props) {
