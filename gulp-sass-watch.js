@@ -3,7 +3,7 @@ const gulp = require('gulp');
 
 // MODULES
 const sass = require('gulp-sass');
-const cssMinifiy = require('gulp-cssmin');
+const cssMin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 
 // SOURCE DIRECTORY
@@ -19,8 +19,16 @@ gulp.task('compile', () => {
     .pipe(gulp.dest(destDir))
 });
 
+// MINIFY SASS
+gulp.task('minify', () => {
+  return gulp.src([`${destDir}*.css`,`!${destDir}*.min.css`])
+    .pipe(cssMin())
+    .pipe(rename({suffix:'.min'}))
+    .pipe(gulp.dest(destDir))
+});
+
 gulp.task('sass:watch', () => {
-  gulp.watch(`${sourceDir}*.{sass,scss}`, gulp.series(['compile']), () => {});
+  gulp.watch(`${sourceDir}*.{sass,scss}`, gulp.series(['compile','minify']), () => {});
 });
 
 gulp.task('default', gulp.series(['sass:watch'], () => {}));
