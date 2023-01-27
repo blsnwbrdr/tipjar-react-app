@@ -9,10 +9,11 @@
   },
   "homepage": "http://brandonlew.com/portfolio/tipjar",
   "scripts": {
-    "start": "react-scripts start",
+    "branch-clean-up": "git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -D",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
     "react": "^16.0.0",
