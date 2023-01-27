@@ -2,7 +2,7 @@
 const gulp = require('gulp');
 
 // MODULES
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const cssMin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 
@@ -12,10 +12,14 @@ const sourceDir = 'src/styles/';
 // DESTINATION DIRECTORY
 const destDir = 'src/styles/';
 
+//----------
+// TASKS
+//----------
+
 // COMPILE SASS
 gulp.task('compile', () => {
   return gulp.src([`${sourceDir}*.{sass,scss}`])
-    .pipe(sass({outputStyle:'compact'}).on('error', sass.logError))
+    .pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
     .pipe(gulp.dest(destDir))
 });
 
