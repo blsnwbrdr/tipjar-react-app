@@ -14,8 +14,8 @@ Scroll or search through the web app to find the tip etiquette of over 85 countr
 
 ## Scripts
 
-- `build` - Build application.
 - `branch-clean-up` - After running `git fetch -p` to clean outdated remote branches, use this script to delete those branches locally.
+- `build` - Build application.
 - `sass-watch` - Starts the automated Gulp script that compiles Sass changes.
 - `start` - Start application.
 - `test` - Test application.
