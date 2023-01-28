@@ -12,13 +12,13 @@ class App extends Component {
     super(props);
     this.displayListings = this.displayListings.bind(this);
     this.state = {
-      display: 'Splash'
+      display: 'Splash',
     };
   }
 
   displayListings() {
     this.setState({
-      display: 'Listings'
+      display: 'Listings',
     });
   }
 
@@ -27,17 +27,11 @@ class App extends Component {
 
     switch (display) {
       case 'Splash':
-        return (
-          <Splash displayListings={this.displayListings} />
-        );
+        return <Splash displayListings={this.displayListings} />;
       case 'Listings':
-        return (
-          <Listings />
-        );
+        return <Listings />;
       default:
-        return (
-          <Splash displayListings={this.displayListings} />
-        );
+        return <Splash displayListings={this.displayListings} />;
     }
   }
 }
