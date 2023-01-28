@@ -6,7 +6,7 @@ import ListingsFooter from './ListingsFooter';
 class Listings extends Component {
   render() {
     return (
-      <div className="listings">
+      <div className='listings'>
         <ListingsHeader />
         <ListingsBody />
         <ListingsFooter />
