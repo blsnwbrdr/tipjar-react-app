@@ -4,7 +4,6 @@ import ListingsBody from './ListingsBody';
 import ListingsFooter from './ListingsFooter';
 
 class Listings extends Component {
-
   render() {
     return (
       <div className='listings'>
@@ -12,7 +11,7 @@ class Listings extends Component {
         <ListingsBody />
         <ListingsFooter />
       </div>
-    )
+    );
   }
 }
 
