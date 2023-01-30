@@ -6,6 +6,11 @@ const photos = [
   'banner3.jpg',
   'banner4.jpg',
   'banner5.jpg',
+  'banner6.jpg',
+  'banner7.jpg',
+  'banner8.jpg',
+  'banner9.jpg',
+  'banner10.jpg',
 ];
 const random = Math.floor(Math.random() * photos.length);
 const splashBackground = { backgroundImage: 'url(img/' + photos[random] + ')' };
