@@ -27,7 +27,7 @@ class CountryList extends Component {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='img/appStore.svg' alt='apple app store icon' />
+            <img src='tipjar/img/appStore.svg' alt='apple app store icon' />
           </a>
         </div>
         <div className='list'>
