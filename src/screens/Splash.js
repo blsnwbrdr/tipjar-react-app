@@ -13,7 +13,9 @@ const photos = [
   'banner10.jpg',
 ];
 const random = Math.floor(Math.random() * photos.length);
-const splashBackground = { backgroundImage: 'url(img/' + photos[random] + ')' };
+const splashBackground = {
+  backgroundImage: `url(${process.env.PUBLIC_URL}/img/${photos[random]})`,
+};
 
 class Splash extends Component {
   render() {
