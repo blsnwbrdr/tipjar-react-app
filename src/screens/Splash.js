@@ -14,7 +14,7 @@ const photos = [
 ];
 const random = Math.floor(Math.random() * photos.length);
 const splashBackground = {
-  backgroundImage: 'url(tipjar/img/' + photos[random] + ')',
+  backgroundImage: `url(${process.env.PUBLIC_URL}/img/${photos[random]})`,
 };
 
 class Splash extends Component {
