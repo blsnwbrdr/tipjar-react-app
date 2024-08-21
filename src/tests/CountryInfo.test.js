@@ -1,6 +1,6 @@
 import { act } from 'react';
 import ReactDOM from 'react-dom/client';
-import CountryInfo from './CountryInfo';
+import CountryInfo from '../screens/CountryInfo';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 

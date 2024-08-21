@@ -1,6 +1,6 @@
 import { act } from 'react';
 import ReactDOM from 'react-dom/client';
-import ListingsFooter from './ListingsFooter';
+import ListingsFooter from '../screens/ListingsFooter';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 

@@ -1,14 +1,14 @@
 import { act } from 'react';
 import ReactDOM from 'react-dom/client';
-import Splash from './Splash';
+import App from '../App';
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
-it('renders Splash component', async () => {
+it('renders App component', async () => {
   const container = document.createElement('div');
   document.body.appendChild(container);
 
   await act(async () => {
-    ReactDOM.createRoot(container).render(<Splash />);
+    ReactDOM.createRoot(container).render(<App />);
   });
 });
