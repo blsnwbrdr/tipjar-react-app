@@ -1,9 +1,14 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { act } from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  const root = createRoot(div);
-  root.render(<App />);
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+
+it('renders App component', async () => {
+  const container = document.createElement('div');
+  document.body.appendChild(container);
+
+  await act(async () => {
+    ReactDOM.createRoot(container).render(<App />);
+  });
 });
