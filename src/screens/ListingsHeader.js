@@ -32,7 +32,10 @@ class ListingsHeader extends Component {
       <div className={`header fadeIn ${this.state.shadow}`}>
         <nav className='nav'></nav>
         <h1>TIP JAR</h1>
-        <p>A globetrotting guide to gratuity</p>
+        <img
+          src={process.env.PUBLIC_URL + '/img/tipjarLogo.svg'}
+          alt='a globetrotting guide to gratuity logo'
+        />
       </div>
     );
   }
