@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Patrick+Hand|Nothing+You+Could+Do|Hind:400,600')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Hind:wght@400;600&display=swap')
 
 // VARIABLES
-$patrick: 'Patrick Hand', sans-serif
-$nothing: 'Nothing You Could Do', sans-serif
+$raleway: 'Raleway', sans-serif
 $hind: 'Hind', sans-serif
-$orange-1: #CC9F74
-$orange-2: #B57A42
-$grey-1: #494F56
+$colorPrimary: #DF8D40
+$colorSecondary: #44627B
+$colorTertiary: #ffa149
+$colorGrey: #494F56
 =transition($transition-time)
   transition: all $transition-time ease-out
 
 // GLOBAL ELEMENTS
 h1,h2,h3,h4,h5,p,button,li
-  color: $grey-1
+  color: $colorGrey
 h1,h2,h3,h4,h5,p
   margin-top: 0
 h1
@@ -24,17 +24,19 @@ h3
 h4,h5,p
   margin-bottom: 10px
 h1
-  font-family: $patrick
+  font-family: $raleway
+  font-weight: 300
   letter-spacing: 2px
 h2
-  font-family: $patrick
+  font-family: $raleway
+  font-weight: 300
 h3,p,button,li
   font-family: $hind
 a,a:visited
   text-decoration: none
-  color: $grey-1
+  color: $colorGrey
   &:hover
-    color: $orange-2
+    color: $colorPrimary
     text-decoration: underline
 
 // STYLES
@@ -51,23 +53,22 @@ a,a:visited
   .overlay
     width: 100%
     height: 100%
-    background: rgba(62, 41, 22, 0.75)
+    background: rgba(68, 98, 123, 0.75)
     .header
       position: absolute
       top: 50%
       left: 50%
       transform: translate(-50%,-100%)
+      width: 100%
       h1
         font-size: 60px
-        color: $orange-1
+        color: $colorTertiary
       p
-        font-family: $nothing
-        font-size: 16px
+        font-family: $raleway
+        font-size: 20px
+        font-weight: 300
         color: white
-        width: 275px
-        margin: 0 auto
-        border-left: 2px solid white
-        border-right: 2px solid white
+        margin-bottom: 0
       button
         background-color: transparent
         border: 2px solid white
@@ -81,14 +82,14 @@ a,a:visited
         &:hover
           cursor: pointer
           padding: 5px 35px
-          background-color: $orange-1
+          background-color: $colorTertiary
           +transition(0.3s)
 .listings
   padding-bottom: 75px
   text-align: center
   .header
     position: fixed
-    height: 125px
+    height: 175px
     width: 100%
     left: 50%
     top: 0
@@ -97,24 +98,21 @@ a,a:visited
     background-color: white
     h1
       font-size: 60px
-      color: $orange-2
-    p
-      font-family: $nothing
-      font-size: 16px
-      width: 275px
-      margin: 0 auto
-      border-left: 2px solid $grey-1
-      border-right: 2px solid $grey-1
+      color: $colorPrimary
+      margin-top: 10px
+    img
+      width: 250px
   .body
     width: 75%
-    margin: 150px auto 0
+    margin: 185px auto 0
     .button
       img
         width: 100px
       button
         background-color: transparent
-        border: 2px solid $grey-1
+        border: 2px solid $colorSecondary
         border-radius: 5px
+        color: $colorSecondary
         padding: 5px 25px
         font-size: 16px
         font-weight: 600
@@ -123,11 +121,11 @@ a,a:visited
           cursor: pointer
           padding: 5px 35px
           color: white
-          background-color: $grey-1
+          background-color: $colorSecondary
           +transition(0.3s)
     .list
-      margin-top: 50px
-      margin-bottom: 50px
+      margin-top: 20px
+      margin-bottom: 20px
       ul
         column-count: 1
         list-style: none
@@ -142,16 +140,16 @@ a,a:visited
         +transition(0.3s)
         &:hover
           cursor: pointer
-          border-left-color: $orange-2
+          border-left-color: $colorPrimary
           padding-left: 30px
-          color: $orange-2
+          color: $colorPrimary
           +transition(0.3s)
     .country
       max-width: 500px
       margin: 50px auto 0
       h2
         font-size: 30px
-        color: $orange-2
+        color: $colorSecondary
       h3
         font-size: 20px
         margin: 20px auto
@@ -164,13 +162,13 @@ a,a:visited
           transform: translate(-50%,0)
           width: 50%
           height: 1px
-          border-bottom: 2px solid $orange-2
+          border-bottom: 2px solid $colorPrimary
       p
         font-size: 16px
         margin-bottom: 35px
       .fa
         font-size: 50px
-        color: $grey-1
+        color: $colorGrey
       .line-100
         width: 100px
       .line-125
@@ -183,7 +181,9 @@ a,a:visited
         margin-bottom: 10px
         font-size: 12px
   .footer
-    padding-top: 50px
+    padding-top: 20px
+    .app-store
+      margin-bottom: 20px
     p
       margin-bottom: 5px
       font-size: 12px
@@ -194,7 +194,7 @@ a,a:visited
     .header
       position: relative
     .body
-      margin-top: 25px
+      margin-top: 0px
 @media(min-width:768px)
   .splash
     .overlay
@@ -204,16 +204,15 @@ a,a:visited
           font-size: 120px
         p
           font-size: 32px
-          width: 550px
   .listings
     .header
-      height: 225px
+      height: 275px
       h1
         font-size: 120px
-      p
-        font-size: 32px
-        width: 550px
+      img
+        width: 350px
     .body
+      margin-top: 25px
       .list
         ul
           column-count: 2
@@ -242,7 +241,7 @@ a,a:visited
     opacity: 1
 
 .shadow
-  box-shadow: 0px 0px 10px 0px lighten($grey-1, 50%)
+  box-shadow: 0px 0px 10px 0px lighten($colorGrey, 50%)
 @media(min-width:480px)
   .shadow
     box-shadow: none
@@ -263,10 +262,10 @@ a,a:visited
           &:hover
             background-color: transparent
             padding: 5px 25px
-            color: $grey-1
+            color: $colorGrey
       .list
         button
           &:hover
             border-left-color: transparent
             padding-left: 20px
-            color: $grey-1
+            color: $colorGrey
