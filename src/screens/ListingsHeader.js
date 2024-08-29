@@ -33,9 +33,10 @@ class ListingsHeader extends Component {
         <nav className='nav'></nav>
         <h1>TIP JAR</h1>
         <img
-          src={process.env.PUBLIC_URL + '/img/tipjarLogo.svg'}
-          alt='a globetrotting guide to gratuity logo'
+          src={process.env.PUBLIC_URL + '/img/tipJarIcon.png'}
+          alt='globe with luggage'
         />
+        <p>A globetrotting guide to gratuity</p>
       </div>
     );
   }
