@@ -1,11 +1,11 @@
 {
-  "name": "tipjar-react-app",
+  "name": "tipjar-web",
   "version": "1.0.0",
   "description": "gratuity app built with react",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blsnwbrdr/tipjar-react-app.git"
+    "url": "git+https://github.com/blsnwbrdr/tipjar-web.git"
   },
   "homepage": "http://brandonlew.com/portfolio/tipjar",
   "scripts": {
