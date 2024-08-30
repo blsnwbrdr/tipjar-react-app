@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Hind:wght@300;400;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Hind:wght@300;600&display=swap')
 
 // VARIABLES
 $raleway: 'Raleway', sans-serif
@@ -6,13 +6,15 @@ $hind: 'Hind', sans-serif
 $colorPrimary: #DF8D40
 $colorSecondary: #44627B
 $colorTertiary: #ffa149
-$colorGrey: #494F56
+$colorLightGrey: #fafafa
+$colorMediumGrey: #aaaaaa
+$colorDarkGrey: #444444
 =transition($transition-time)
   transition: all $transition-time ease-out
 
 // GLOBAL ELEMENTS
 h1,h2,h3,h4,h5,p,button,li
-  color: $colorGrey
+  color: $colorDarkGrey
 h1,h2,h3,h4,h5,p
   margin-top: 0
 h1
@@ -26,19 +28,18 @@ h4,h5,p
 h1
   font-family: $raleway
   font-weight: 300
-  letter-spacing: 2px
 h2
   font-family: $raleway
   font-weight: 300
-h3,h4,h5,p,button,li
+h3,h4,h5,p,button,li,a
   font-family: $hind
 h3,h4,h5
   font-weight: 600
-p,button,li
+p,button,li,a
   font-weight: 300
 a,a:visited
   text-decoration: none
-  color: $colorGrey
+  color: $colorDarkGrey
   &:hover
     color: $colorPrimary
     text-decoration: underline
@@ -177,7 +178,7 @@ a,a:visited
         margin-bottom: 35px
       .fa
         font-size: 50px
-        color: $colorGrey
+        color: $colorDarkGrey
       .line-100
         width: 100px
       .line-125
@@ -252,7 +253,7 @@ a,a:visited
     opacity: 1
 
 .shadow
-  box-shadow: 0px 0px 10px 0px lighten($colorGrey, 50%)
+  box-shadow: 0px 0px 10px 0px lighten($colorDarkGrey, 50%)
 @media(min-width:480px)
   .shadow
     box-shadow: none
@@ -273,10 +274,10 @@ a,a:visited
           &:hover
             background-color: transparent
             padding: 5px 25px
-            color: $colorGrey
+            color: $colorDarkGrey
       .list
         button
           &:hover
             border-left-color: transparent
             padding-left: 20px
-            color: $colorGrey
+            color: $colorDarkGrey
