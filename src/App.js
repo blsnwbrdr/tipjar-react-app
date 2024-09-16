@@ -14,6 +14,7 @@ export default function App() {
     setDisplay('Listings');
   };
 
+  // Display Splash or Listings screen
   switch (display) {
     case 'Splash':
       return <Splash displayListings={displayListings} />;

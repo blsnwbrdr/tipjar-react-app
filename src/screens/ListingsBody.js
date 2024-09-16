@@ -13,6 +13,7 @@ export default function ListingsBody() {
     _setCurrencyData(newCurrencyData);
   };
 
+  // Get currency data
   useEffect(() => {
     fetch('https://brandonscode.herokuapp.com/tipjar/currency-data')
       .then((res) => res.json())
@@ -21,10 +22,12 @@ export default function ListingsBody() {
       });
   });
 
+  // Display CountryList screen
   const displayCountryList = () => {
     setDisplay('CountryList');
   };
 
+  // Display CountryInfo screen + get and define country data
   const displayCountryInfo = (country) => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

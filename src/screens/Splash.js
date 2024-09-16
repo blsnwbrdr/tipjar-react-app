@@ -1,5 +1,6 @@
 import React from 'react';
 
+// List of splash photos
 const photos = [
   'banner1.jpg',
   'banner2.jpg',
@@ -13,8 +14,10 @@ const photos = [
   'banner10.jpg',
 ];
 
+// Get random photo
 const random = Math.floor(Math.random() * photos.length);
 
+// Define background image
 const splashBackground = {
   backgroundImage: `url(${process.env.PUBLIC_URL}/img/${photos[random]})`,
 };

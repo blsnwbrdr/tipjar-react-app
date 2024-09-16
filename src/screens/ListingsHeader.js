@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 export default function ListingsHeader() {
   const [shadow, setShadow] = useState('');
 
+  // Add scroll event listener
   useEffect(() => {
     window.addEventListener('scroll', scrolling);
   });
 
+  // Scrolling function to add 'shadow' class
   const scrolling = () => {
     if (window.scrollY === 0) {
       setShadow('');

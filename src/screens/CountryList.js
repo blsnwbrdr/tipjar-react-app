@@ -8,6 +8,7 @@ export default function CountryList(props) {
     _setCountryTipData(newCountryTipData);
   };
 
+  // Get country tip data
   useEffect(() => {
     fetch('https://brandonscode.herokuapp.com/tipjar/tip-data')
       .then((res) => res.json())
