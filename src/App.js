@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 // COMPONENTS
 import Splash from './screens/Splash';
@@ -7,33 +7,19 @@ import Listings from './screens/Listings';
 // STYLES
 import './styles/app.min.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.displayListings = this.displayListings.bind(this);
-    this.state = {
-      display: 'Splash',
-    };
-  }
+export default function App() {
+  const [display, setDisplay] = useState('Splash');
 
-  displayListings() {
-    this.setState({
-      display: 'Listings',
-    });
-  }
+  const displayListings = () => {
+    setDisplay('Listings');
+  };
 
-  render() {
-    const display = this.state.display;
-
-    switch (display) {
-      case 'Splash':
-        return <Splash displayListings={this.displayListings} />;
-      case 'Listings':
-        return <Listings />;
-      default:
-        return <Splash displayListings={this.displayListings} />;
-    }
+  switch (display) {
+    case 'Splash':
+      return <Splash displayListings={displayListings} />;
+    case 'Listings':
+      return <Listings />;
+    default:
+      return <Splash displayListings={displayListings} />;
   }
 }
-
-export default App;

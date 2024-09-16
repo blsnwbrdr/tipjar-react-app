@@ -1,45 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class ListingsHeader extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shadow: '',
-    };
-  }
+export default function ListingsHeader() {
+  const [shadow, setShadow] = useState('');
 
-  scrolling = () => {
-    if (window.pageYOffset === 0) {
-      this.setState({
-        shadow: '',
-      });
-    } else if (window.pageYOffset > 0) {
-      this.setState({
-        shadow: 'shadow',
-      });
+  useEffect(() => {
+    window.addEventListener('scroll', scrolling);
+  });
+
+  const scrolling = () => {
+    if (window.scrollY === 0) {
+      setShadow('');
+    } else if (window.scrollY > 0) {
+      setShadow('shadow');
     }
   };
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.scrolling);
-  }
-  componentWillUnmount() {
-    window.addEventListener('scroll', this.scrolling);
-  }
-
-  render() {
-    return (
-      <div className={`header fadeIn ${this.state.shadow}`}>
-        <nav className='nav'></nav>
-        <h1>TIP JAR</h1>
-        <img
-          src={process.env.PUBLIC_URL + '/img/tipjarIcon.png'}
-          alt='globe with luggage'
-        />
-        <p>A globetrotting guide to gratuity</p>
-      </div>
-    );
-  }
+  return (
+    <div className={`header fadeIn ${shadow}`}>
+      <nav className='nav'></nav>
+      <h1>TIP JAR</h1>
+      <img
+        src={process.env.PUBLIC_URL + '/img/tipjarIcon.png'}
+        alt='globe with luggage'
+      />
+      <p>A globetrotting guide to gratuity</p>
+    </div>
+  );
 }
-
-export default ListingsHeader;
