@@ -1,71 +1,63 @@
-import React, { Component } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import CountryList from './CountryList';
 import CountryInfo from './CountryInfo';
 
-class ListingsBody extends Component {
-  constructor(props) {
-    super(props);
-    this.displayCountryList = this.displayCountryList.bind(this);
-    this.displayCountryInfo = this.displayCountryInfo.bind(this);
-    this.state = {
-      display: 'CountryList',
-      currencyData: [],
-    };
-  }
+export default function ListingsBody() {
+  const [display, setDisplay] = useState('CountryList');
+  const [countryTipData, setCountryTipData] = useState([]);
+  const [countryCurrencyData, setCountryCurrencyData] = useState('');
+  const [currencyData, _setCurrencyData] = useState([]);
+  const currencyDataRef = useRef(currencyData);
+  const setCurrencyData = (newCurrencyData) => {
+    currencyDataRef.current = newCurrencyData;
+    _setCurrencyData(newCurrencyData);
+  };
 
-  componentDidMount() {
+  // Get currency data
+  useEffect(() => {
     fetch('https://brandonscode.herokuapp.com/tipjar/currency-data')
       .then((res) => res.json())
       .then((result) => {
-        this.setState({
-          currencyData: result,
-        });
+        setCurrencyData(result);
       });
-  }
+  });
 
-  displayCountryList() {
-    this.setState({
-      display: 'CountryList',
-    });
-  }
+  // Display CountryList screen
+  const displayCountryList = () => {
+    setDisplay('CountryList');
+  };
 
-  displayCountryInfo(country) {
+  // Display CountryInfo screen + get and define country data
+  const displayCountryInfo = (country) => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     fetch(`https://brandonscode.herokuapp.com/tipjar/search/country/${country}`)
       .then((res) => res.json())
       .then((result) => {
-        for (var i = 0; i < this.state.currencyData.length; i++) {
-          if (result.currency === this.state.currencyData[i].currency) {
-            this.setState({
-              display: 'CountryInfo',
-              countryTipData: result,
-              countryCurrencyData:
-                Math.round(this.state.currencyData[i].conversion * 100) / 100,
-            });
+        for (var i = 0; i < currencyDataRef.current.length; i++) {
+          if (result.currency === currencyDataRef.current[i].currency) {
+            setDisplay('CountryInfo');
+            setCountryTipData(result);
+            setCountryCurrencyData(
+              Math.round(currencyDataRef.current[i].conversion * 100) / 100
+            );
           }
         }
       });
-  }
+  };
 
-  render() {
-    const display = this.state.display;
-
-    switch (display) {
-      case 'CountryList':
-        return <CountryList displayCountryInfo={this.displayCountryInfo} />;
-      case 'CountryInfo':
-        return (
-          <CountryInfo
-            displayCountryList={this.displayCountryList}
-            countryTipData={this.state.countryTipData}
-            countryCurrencyData={this.state.countryCurrencyData}
-          />
-        );
-      default:
-        return <CountryList displayCountryInfo={this.displayCountryInfo} />;
-    }
+  switch (display) {
+    case 'CountryList':
+      return <CountryList displayCountryInfo={displayCountryInfo} />;
+    case 'CountryInfo':
+      return (
+        <CountryInfo
+          displayCountryList={displayCountryList}
+          countryTipData={countryTipData}
+          countryCurrencyData={countryCurrencyData}
+        />
+      );
+    default:
+      return <CountryList displayCountryInfo={displayCountryInfo} />;
   }
 }
-
-export default ListingsBody;

@@ -1,44 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-class CountryList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      countryTipData: [],
-    };
-  }
+export default function CountryList(props) {
+  const [countryTipData, _setCountryTipData] = useState([]);
+  const countryTipDataRef = useRef(countryTipData);
+  const setCountryTipData = (newCountryTipData) => {
+    countryTipDataRef.current = newCountryTipData;
+    _setCountryTipData(newCountryTipData);
+  };
 
-  componentDidMount() {
+  // Get country tip data
+  useEffect(() => {
     fetch('https://brandonscode.herokuapp.com/tipjar/tip-data')
       .then((res) => res.json())
       .then((result) => {
-        this.setState({
-          countryTipData: result,
-        });
+        setCountryTipData(result);
       });
-  }
+  });
 
-  render() {
-    return (
-      <div className='body fadeIn'>
-        <div className='list'>
-          <ul>
-            {this.state.countryTipData.map((data, key) => {
-              return (
-                <li key={key}>
-                  <button
-                    onClick={() => this.props.displayCountryInfo(data.country)}
-                  >
-                    {data.country}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+  return (
+    <div className='body fadeIn'>
+      <div className='list'>
+        <ul>
+          {countryTipDataRef.current.map((data, key) => {
+            return (
+              <li key={key}>
+                <button onClick={() => props.displayCountryInfo(data.country)}>
+                  {data.country}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default CountryList;
